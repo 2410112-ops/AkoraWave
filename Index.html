@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>AkoraWave | Ropa Urbana</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #111111;
+      color: white;
+    }
+
+    /* NAVEGACIÓN */
+    header {
+      background: #111111;
+      padding: 20px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 1px solid #333;
+    }
+
+    .logo {
+      font-size: 30px;
+      font-weight: bold;
+      color: #7C3AED;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 20px;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: #7C3AED;
+    }
+
+    /* INICIO */
+    .inicio {
+      min-height: 90vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 40px 20px;
+      background: linear-gradient(
+        rgba(17,17,17,.75),
+        rgba(17,17,17,.95)
+      );
+    }
+
+    .inicio h1 {
+      font-size: 65px;
+      margin-bottom: 15px;
+    }
+
+    .inicio h1 span {
+      color: #7C3AED;
+    }
+
+    .inicio p {
+      font-size: 22px;
+      color: #ddd;
+      margin-bottom: 30px;
+    }
+
+    .boton {
+      display: inline-block;
+      padding: 15px 30px;
+      background: #7C3AED;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+    }
+
+    .boton:hover {
+      background: #6028c9;
+    }
+
+    /* SECCIONES */
+    section {
+      padding: 80px 8%;
+    }
+
+    .titulo {
+      text-align: center;
+      font-size: 40px;
+      margin-bottom: 40px;
+    }
+
+    .titulo span {
+      color: #7C3AED;
+    }
+
+    /* NOSOTROS */
+    .nosotros {
+      background: #181818;
+      text-align: center;
+    }
+
+    .nosotros p {
+      max-width: 800px;
+      margin: auto;
+      color: #ddd;
+      font-size: 18px;
+      line-height: 1.8;
+    }
+
+    .info {
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      margin-top: 40px;
+      flex-wrap: wrap;
+    }
+
+    .info-box {
+      background: #222;
+      padding: 30px;
+      border-radius: 12px;
+      width: 280px;
+    }
+
+    .info-box h3 {
+      color: #7C3AED;
+      margin-bottom: 15px;
+    }
+
+    /* PRODUCTOS */
+    .productos {
+      background: #111;
+    }
+
+    .productos-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 25px;
+    }
+
+    .producto {
+      background: #1d1d1d;
+      border-radius: 12px;
+      overflow: hidden;
+      text-align: center;
+      padding-bottom: 25px;
+    }
+
+    .producto img {
+      width: 100%;
+      height: 260px;
+      object-fit: cover;
+    }
+
+    .producto h3 {
+      margin: 20px 0 10px;
+      color: #fff;
+    }
+
+    .producto p {
+      color: #bbb;
+      padding: 0 15px;
+    }
+
+    /* GALERÍA */
+    .galeria {
+      background: #181818;
+    }
+
+    .galeria-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .galeria-grid img {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+      border-radius: 12px;
+    }
+
+    /* VIDEO */
+    .video {
+      text-align: center;
+      background: #111;
+    }
+
+    .video video {
+      width: 100%;
+      max-width: 800px;
+      border-radius: 12px;
+    }
+
+    .video p {
+      margin-top: 20px;
+      color: #ccc;
+      font-size: 18px;
+    }
+
+    /* CONTACTO */
+    .contacto {
+      background: #181818;
+    }
+
+    form {
+      max-width: 600px;
+      margin: auto;
+    }
+
+    input,
+    textarea,
+    select {
+      width: 100%;
+      padding: 15px;
+      margin-bottom: 15px;
+      border: none;
+      border-radius: 8px;
+      background: #292929;
+      color: white;
+      font-size: 16px;
+    }
+
+    textarea {
+      height: 150px;
+      resize: none;
+    }
+
+    button {
+      width: 100%;
+      padding: 15px;
+      background: #7C3AED;
+      border: none;
+      color: white;
+      font-size: 17px;
+      font-weight: bold;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #6028c9;
+    }
+
+    /* REDES */
+    .redes {
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    .redes a {
+      color: #7C3AED;
+      text-decoration: none;
+      margin: 10px;
+      font-weight: bold;
+    }
+
+    /* PIE DE PÁGINA */
+    footer {
+      text-align: center;
+      padding: 30px;
+      background: #0b0b0b;
+      color: #aaa;
+    }
+
+    footer span {
+      color: #7C3AED;
+    }
+
+    /* CELULAR */
+    @media (max-width: 700px) {
+
+      header {
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      nav a {
+        margin: 5px;
+        font-size: 14px;
+      }
+
+      .inicio h1 {
+        font-size: 45px;
+      }
+
+      .inicio p {
+        font-size: 18px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- MENÚ -->
+<header>
+  <img src="Logo.jpeg" alt="Logo AkoraWave" width="100">
+  <div class="logo">AKORAWAVE</div>
+
+  <nav>
+    <a href="#inicio">Inicio</a>
+    <a href="#nosotros">Nosotros</a>
+    <a href="#productos">Productos</a>
+    <a href="#galeria">Galería</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
+</header>
+
+
+<!-- INICIO -->
+<section class="inicio" id="inicio">
+
+  <div>
+    <h1>VISTE <span>TU ESTILO.</span></h1>
+
+    <p>
+      Ropa urbana moderna, cómoda y con personalidad.
+    </p>
+
+    <a href="#productos" class="boton">
+      VER COLECCIÓN
+    </a>
+  </div>
+
+</section>
+
+
+<!-- NOSOTROS -->
+<section class="nosotros" id="nosotros">
+
+  <h2 class="titulo">
+    SOBRE <span>AKORAWAVE</span>
+  </h2>
+
+  <p>
+    UrbanWave nació para que cada persona pueda expresar
+    su personalidad a través de su estilo. Creamos ropa urbana
+    moderna, cómoda y accesible para jóvenes que buscan algo diferente.
+  </p>
+
+  <div class="info">
+
+    <div class="info-box">
+      <h3>MISIÓN</h3>
+      <p>
+        Ofrecer ropa urbana de buena calidad y diseños actuales
+        a precios accesibles.
+      </p>
+    </div>
+
+    <div class="info-box">
+      <h3>VISIÓN</h3>
+      <p>
+        Convertirnos en una marca reconocida entre los jóvenes
+        por nuestros diseños y estilo.
+      </p>
+    </div>
+
+    <div class="info-box">
+      <h3>NUESTRO EQUIPO</h3>
+      <p>
+        Un equipo creativo encargado del diseño, ventas,
+        fotografía y redes sociales.
+      </p>
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- PRODUCTOS -->
+<section class="productos" id="productos">
+
+  <h2 class="titulo">
+    NUESTRA <span>COLECCIÓN</span>
+  </h2>
+
+  <div class="productos-grid">
+
+    <div class="producto">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6uwbbZ9TQnu1tJGzKxp_7YWUPibfCZLpMPN3apJlWQQ&s=10" alt="Playeras urbanas">
+      <h3>PLAYERAS</h3>
+      <p>Diseños urbanos y modernos para todos los días.</p>
+    </div>
+
+    <div class="producto">
+      <img src="https://ae01.alicdn.com/kf/S7fad24865505483394d97e4e355cc0bd3/Retro-Gothic-Graphic-Print-Hip-Hop-Hoodie-for-Men-Y2k-Grunge-Punk-Casual-Loose-Pullover-Women.jpg?odnHeight=612&odnWidth=612&odnBg=FFFFFF" alt="Sudaderas urbanas">
+      <h3>SUDADERAS</h3>
+      <p>Comodidad y estilo para cualquier ocasión.</p>
+    </div>
+
+    <div class="producto">
+      <img src="https://img.ltwebstatic.com/v4/j/spmp/2026/03/24/e7/1774357635cf937e38ce664daac32cb034f3711c83_thumbnail_750x999.jpg" alt="Gorras urbanas">
+      <h3>GORRAS</h3>
+      <p>Diferentes diseños para completar tu outfit.</p>
+    </div>
+
+    <div class="producto">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUdbtRMnoJlPqX8cZqQIbRgPA9tfIW1KXM-Ab8297Llmk-0Qa_sxjC5rI&s=10" alt="Pantalones urbanos">
+      <h3>PANTALONES</h3>
+      <p>Estilo urbano y casual.</p>
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- GALERÍA -->
+<section class="galeria" id="galeria">
+
+  <h2 class="titulo">
+    <span>GALERÍA</span>
+  </h2>
+
+  <div class="galeria-grid">
+
+    <img src="https://dej7zfulpdtvb.cloudfront.net/uploads/2026/01/22102530/blog-tendencias-1024x683.png" alt="Ropa urbana">
+    <img src="https://www.elespectador.com/wp-content/uploads/elespectador/O44QTSN4VZDG7E6CFEFDJH4KLA.png" alt="Colección urbana">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYKeTB6btOD3GM948orbuyc9cFn613tYd1buZqrMknUk-0X1qO0Hrs7QHz&s=10" alt="Sudadera urbana">
+    <img src="https://i.pinimg.com/236x/b0/18/8d/b0188d22c783edba9cdccc26b9696fa1.jpg" alt="Outfit urbano">
+    <img src="https://imagenes.elpais.com/resizer/v2/N537HR2FQZEHLHJQZDQZUJ6WH4.jpeg?auth=c3963c5e3d806937cf268ad17e57bbc5cd9188edd291f9978ad428422eceec57&width=1200" alt="Moda urbana">
+
+  </div>
+
+</section>
+
+
+<!-- VIDEO -->
+<section class="video">
+
+  <h2 class="titulo">
+    CONOCE NUESTRA <span>ROPA</span>
+  </h2>
+
+  <video controls muted autoplay loop playsinline>
+    <source src="Video.mp4" type="video/mp4">
+  </video>
+
+  <p>
+    Ropa urbana de buena calidad para expresar tu estilo.
+  </p>
+
+</section>
+
+
+<!-- CONTACTO -->
+<section class="contacto" id="contacto">
+
+  <h2 class="titulo">
+    <span>CONTACTO</span>
+  </h2>
+
+  <form>
+
+    <input
+      type="text"
+      placeholder="Tu nombre"
+      required>
+
+    <input
+      type="email"
+      placeholder="Tu correo electrónico"
+      required>
+
+    <select required>
+      <option value="">Producto de interés</option>
+      <option>Playeras</option>
+      <option>Sudaderas</option>
+      <option>Gorras</option>
+      <option>Pantalones</option>
+    </select>
+
+    <textarea
+      placeholder="Escribe tu mensaje">
+    </textarea>
+
+    <button type="submit">
+      ENVIAR MENSAJE
+    </button>
+
+  </form>
+
+
+  <div class="redes">
+
+    <p>Síguenos en nuestras redes:</p>
+
+    <br>
+
+    <a href="#">Instagram</a>
+    <a href="#">TikTok</a>
+    <a href="https://www.facebook.com/profile.php?id=61595158891493">Facebook</a>
+
+    <p style="margin-top:20px;">
+      📍 Altamira, Tamaulipas
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- FOOTER -->
+<footer>
+
+  © 2026 <span>AkoraWave</span> |
+  Viste tu estilo.
+
+</footer>
+
+</body>
+</html>
